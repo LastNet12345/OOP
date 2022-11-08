@@ -28,7 +28,7 @@
 
     internal class Admin : Employee
     {
-        public string Department { get; set; }
+        public string? Department { get; set; }
 
         public override void Do()
         {

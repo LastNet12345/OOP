@@ -4,7 +4,10 @@
     {
         static void Main(string[] args)
         {
-           // FirstExample();
+            // FirstExample();
+            var car = new Car("Volvo", "740");
+            Console.WriteLine(car.Brand);
+
 
         }
 
