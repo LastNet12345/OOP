@@ -5,11 +5,48 @@
         static void Main(string[] args)
         {
             // FirstExample();
-            var car = new Car("Volvo", "740");
-            Console.WriteLine(car.Drive(12));
+            var car = new Car("Volvo", "740", "AAA111");
+            //  Console.WriteLine(car.Drive(12));
 
             var ferrari = new Ferrari();
-            Console.WriteLine(ferrari.Drive(45));
+            // Console.WriteLine(ferrari.Drive(45));
+
+            var vehicles = new List<IDrivable>()
+            {
+                car,
+                ferrari,
+                new Vehicle("Saab", "XXX333"),
+                new Bicycle()
+            };
+
+            foreach (IDrivable drivable in vehicles)
+            {
+              //  Console.WriteLine(drivable.Drive(10));
+
+                //Bicycle bicycle = (Bicycle)drivable;
+
+               // Bicycle? bicycle = drivable as Bicycle;
+
+                //if (bicycle != null)
+                //{
+                //    Console.WriteLine(bicycle.MethodInOnlyBicyle());
+                //}
+
+                 // Console.WriteLine(bicycle?.MethodInOnlyBicyle());
+
+                //if(drivable is Bicycle)
+                //{
+                //    Bicycle bicycle2 = (Bicycle)drivable;
+                //    Console.WriteLine(bicycle2.MethodInOnlyBicyle());
+                //} 
+                
+                if(drivable is Bicycle bicycle3)
+                {
+                    Console.WriteLine(bicycle3.MethodInOnlyBicyle());
+                }
+
+
+            }
 
 
         }
