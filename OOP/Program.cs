@@ -4,6 +4,12 @@
     {
         static void Main(string[] args)
         {
+           // FirstExample();
+
+        }
+
+        private static void FirstExample()
+        {
             Person person = new Person();
             person.Name = "Kalle";
 
@@ -24,10 +30,10 @@
             Admin castedAdmin = (Admin)admin2;
             Console.WriteLine(castedAdmin.Department);
             castedAdmin.Do();
-            
+
             Person admin3 = new Admin();
             IPerson admin4 = new Admin();
-            
+
 
 
             var list = new List<IPerson>()
@@ -39,16 +45,10 @@
             //list.Add(employee);
             //list.Add(admin);
 
-            foreach(Person person1 in list)
+            foreach (Person person1 in list)
             {
                 person1.Do();
             }
-
-
-
-
-
-           
         }
     }
 }
