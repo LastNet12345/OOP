@@ -6,7 +6,10 @@
         {
             // FirstExample();
             var car = new Car("Volvo", "740");
-            Console.WriteLine(car.Brand);
+            Console.WriteLine(car.Drive(12));
+
+            var ferrari = new Ferrari();
+            Console.WriteLine(ferrari.Drive(45));
 
 
         }

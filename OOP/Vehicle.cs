@@ -9,6 +9,11 @@ namespace OOP
     internal interface IDrivable
     {
         string Drive(int distance);
+    } 
+    
+    internal interface IStoppable
+    {
+        string Stop();
     }
 
     internal class Vehicle : IDrivable
@@ -22,7 +27,7 @@ namespace OOP
 
         public virtual string Drive(int distance)
         {
-            return $"Vehicle drove for {distance}";
+            return $"{this.GetType().Name} drove for {distance}";
         }
     }
 
@@ -33,6 +38,23 @@ namespace OOP
         {
             Model = model;
         }
+
+        public override string Drive(int distance)
+        {
+            return $"{base.Drive(distance)} From: {GetType().Name}";
+        }
+    }
+
+
+    internal class Ferrari : Car, IStoppable
+    {
+        public Ferrari(string model = "Testarosa") : base("Ferrari", model){}
+
+        public string Stop()
+        {
+            return "Stop";
+        }
+
 
     }
 }
