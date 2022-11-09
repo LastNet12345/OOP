@@ -65,7 +65,7 @@ namespace OOP
     //Vehicle ärver från AbstractVehicle, Vehicle är en AbstractVehicle
     internal class Vehicle : AbstractVehicle
     {
-        public string Brand { get; set; }
+        public virtual string Brand { get; set; }
         public string RegNo { get; }
 
         public Vehicle() : this("DefaultBrandName", "NotRegistredYet"){ }
@@ -83,7 +83,7 @@ namespace OOP
         }
     }
 
-    internal class Car : Vehicle
+    internal /*sealed*/ class Car : Vehicle
     {
         public string Model { get; set; }
 
@@ -93,7 +93,7 @@ namespace OOP
             Model = model;
         }
 
-        public override string Drive(int distance)
+        public sealed override string Drive(int distance)
         {
             return $"{base.Drive(distance)} From: {GetType().Name}";
         }
@@ -110,6 +110,8 @@ namespace OOP
             isInUse = false;
             return "Stop";
         }
+
+      
 
 
     }
