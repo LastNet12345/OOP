@@ -4,7 +4,11 @@
     {
         static void Main(string[] args)
         {
+
             // FirstExample();
+            var v = new Vehicle();
+
+
             var car = new Car("Volvo", "740", "AAA111");
             //  Console.WriteLine(car.Drive(12));
 

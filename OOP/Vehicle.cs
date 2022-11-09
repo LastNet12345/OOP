@@ -33,11 +33,23 @@ namespace OOP
     //AbstractVehicle implementerar IDrivable
     internal abstract class AbstractVehicle : IDrivable
     {
+
+        private bool isInUse;
+
+        public AbstractVehicle(bool isInUse)
+        {
+            this.isInUse = isInUse;
+        }
+
+
+
         //Virtual - En metod som markeras med nykelordet virtual är ok att skriva en ny implementation i  ärvda klasser
         public virtual string Drive(int distance)
         {
             return $"{this.GetType().Name} drove for {distance}";
         }
+
+
 
         //Håller ingen implementation måste implementeras i ärvda klasser
         //Nykelordet abstract kan bara användas i abstrakta klasser och interfaces
@@ -51,7 +63,9 @@ namespace OOP
         public string Brand { get; set; }
         public string RegNo { get; }
 
-        public Vehicle(string brand, string regNo)
+        public Vehicle() : this("DefaultBrandName", "NotRegistredYet"){ }
+
+        public Vehicle(string brand, string regNo, bool isInUse = false) : base(isInUse)
         {
             Brand = brand;
             RegNo = regNo;
@@ -95,6 +109,11 @@ namespace OOP
 
     internal class Bicycle : AbstractVehicle
     {
+        public Bicycle() : base(false)
+        {
+
+        }
+
         //Overide egen implementation av Turn, mer specialiserad variant
         public override string Turn()
         {
