@@ -7,6 +7,8 @@
 
             // FirstExample();
             var v = new Vehicle();
+            // v.isInUse = true;
+            //v.Test();
 
 
             var car = new Car("Volvo", "740", "AAA111");

@@ -34,7 +34,7 @@ namespace OOP
     internal abstract class AbstractVehicle : IDrivable
     {
 
-        private bool isInUse;
+        protected bool isInUse;
 
         public AbstractVehicle(bool isInUse)
         {
@@ -54,6 +54,11 @@ namespace OOP
         //Håller ingen implementation måste implementeras i ärvda klasser
         //Nykelordet abstract kan bara användas i abstrakta klasser och interfaces
         public abstract string Turn();
+
+        protected void Test()
+        {
+            Console.WriteLine("Test");
+        }
 
     }
 
@@ -101,6 +106,8 @@ namespace OOP
 
         public string Stop()
         {
+            Test();
+            isInUse = false;
             return "Stop";
         }
 
