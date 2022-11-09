@@ -7,6 +7,18 @@
 
             // FirstExample();
 
+            string name = "Kalle";
+            var res = name.AddString("Anka");
+
+            var  list = new List<Employee>();
+            list.PrintAll();
+
+
+            var arr = new Admin[10];
+            arr.PrintAll(); 
+
+
+
             Person person = new Person();
             person.Do();    
             Person employee = new Employee();
