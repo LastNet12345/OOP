@@ -23,6 +23,11 @@
     internal class Employee : Person
     {
         public int Salary { get; set; }
+
+        public new virtual void Do()
+        {
+            Console.WriteLine("Employee do");
+        }
         
     }
 
@@ -32,7 +37,7 @@
 
         public override void Do()
         {
-           // base.Do();
+            // base.Do();
             Console.WriteLine("Admin doing");
         }
     }

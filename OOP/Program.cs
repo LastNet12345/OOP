@@ -6,6 +6,15 @@
         {
 
             // FirstExample();
+
+            Person person = new Person();
+            person.Do();    
+            Person employee = new Employee();
+            employee.Do();
+
+
+
+
             var v = new Vehicle();
             // v.isInUse = true;
             //v.Test();
