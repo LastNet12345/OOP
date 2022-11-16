@@ -28,9 +28,9 @@ namespace OOP
         //    }
         //} 
         
-        public static void PrintAll(this IEnumerable<IPerson> source)
+        public static void PrintAll<T>(this IEnumerable<T> source)
         {
-            foreach (Person person in source)
+            foreach (T person in source)
             {
                 Console.WriteLine(person);
             }
